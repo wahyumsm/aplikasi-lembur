@@ -1,0 +1,99 @@
+ const getPengajuan = async () => {
+    await axios({
+      method: "GET",
+      url: "https://api-dev-overtime.assist.id/api/DataOverTimes/laporanDataOverTime/?dateStart=2023-01-01+00:00:00&dateEnd=2023-01-28+23:59:59&skip=0&limit=20",
+      headers: {
+        Authorization: JWT_TOKEN,
+      },
+    })
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.data) {
+          setLaporan(res.data.data);
+        }
+      })
+      .catch((err) => alert("anda belum masuk"));
+  };
+  useEffect(() => {
+    getPengajuan();
+  }, []);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    {/* <Typography id="modal-modal-description">
+                      <LocalizationProvider dateAdapter={AdapterDayjs}>
+                        <Stack
+                          style={{
+                            width: 240,
+                            marginLeft: 1,
+                            position: "absolute",
+                            marginTop: 90,
+                          }}
+                          spacing={1}
+                        >
+                          <DesktopDatePicker
+                            label="Tanggal Overtime"
+                            inputFormat="MM/DD/YYYY"
+                            value={value}
+                            onChange={handleTime}
+                            renderInput={(params) => <TextField {...params} />}
+                          />
+                        </Stack>
+                      </LocalizationProvider>
+                    </Typography> */}
+                  {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+                      <TimePicker
+                        label="Jam Mulai"
+                        value={jamMulai}
+                        inputRef={formRefs.startOverTime}
+                        defaultValue={dataEditt.startOverTime || ""}
+                        ampm={false}
+                        onChange={(value) => {
+                          setJamMulai(value);
+                        }}
+                        renderInput={(params) => <TextField {...params} />}
+                      />
+                    </LocalizationProvider> */}
+
+                  {/* <div
+                    style={{
+                      marginLeft: 280,
+                      marginTop: 10,
+                      position: "absolute",
+                    }}
+                  > */}
+                  {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+                      <TimePicker
+                        label="Jam Selesai"
+                        value={jamSelesai}
+                        inputRef={formRefs.endOverTime}
+                        defaultValue={dataEditt.endOverTime || ""}
+                        ampm={false}
+                        onChange={(value) => {
+                          setJamSelesai(value);
+                        }}
+                        renderInput={(params) => <TextField {...params} />}
+                      />
+                    </LocalizationProvider> */}
+                  {/* </div> */}
